@@ -1,0 +1,15 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-server
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+  server:
+    enable-self-preservation: false          # 关闭自我保护
+    eviction-interval-timer-in-ms: 5000      # 每5秒检查一次失效实例
+    response-cache-update-interval-ms: 3000  # 注册表缓存刷新间隔3秒
